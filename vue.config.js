@@ -1,10 +1,13 @@
-// Use require instead of import for Node.js compatibility
-const { defineConfig } = require('@vue/cli-service');
+const { defineConfig } = require('@vue/cli-service')
+module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/coinha/'  // This is your GitHub repository name
+    : '/'
+}
 
-module.exports = defineConfig({
-  transpileDependencies: true,
-  devServer: {
-    allowedHosts: 'all',
-    // You can add other devServer options here
-  },
-});
+
+
+// module.exports = defineConfig({
+//   transpileDependencies: true
+// })
+
